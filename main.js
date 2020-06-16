@@ -3,6 +3,11 @@ const app = new Vue({
   data() {
     const models = [
       {
+        type: 'dae',
+        name: 'Motor.dae',
+        src: 'static/models/dae/untitled-scene.dae'
+      },
+      {
         type: 'obj',
         name: 'Model 1',
         src: 'static/models/obj/Piston_10/Piston_10(Quads).obj'
@@ -41,11 +46,6 @@ const app = new Vue({
         type: 'json',
         name: 'Motor.json',
         src: 'static/models/json/untitled-scene.json'
-      },
-      {
-        type: 'dae',
-        name: 'Motor.dae',
-        src: 'static/models/dae/untitled-scene.dae'
       },
     ];
     const activeModel = models[0];
