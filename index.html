@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D viewer</title>
+
+
+</head>
+<body>
+    <div id="app">
+        <button v-for="model in models" @click="setModel(model)">{{ model.name }}</button>
+        <model-obj v-if="activeModel.type === 'obj'" :src="activeModel.src" @on-mousedown="onMouseDown" @on-mousemove="onMouseMove"></model-obj>
+        <model-stl v-if="activeModel.type === 'stl'" :src="activeModel.src" @on-mousedown="onMouseDown" @on-mousemove="onMouseMove"></model-stl>
+        <model-three v-if="activeModel.type === 'json'" :src="activeModel.src" @on-mousedown="onMouseDown" @on-mousemove="onMouseMove"></model-three>
+        <model-collada v-if="activeModel.type === 'dae'" :src="activeModel.src" @on-mousedown="onMouseDown" @on-mousemove="onMouseMove"></model-collada>
+    </div>
+    <script src="libs/vue.js"></script>
+    <script src="libs/vue-3d-model.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
